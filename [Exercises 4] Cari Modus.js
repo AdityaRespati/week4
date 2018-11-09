@@ -1,52 +1,27 @@
-/*PSEUDO CODE
-READ "input" as array
-SET "counter" to 0
-SET "maxCounter" to 0
-SET "modus" to 0
-
-FOR every "input" data
-
-    FOR every other "input" data
-        IF "input" data is EQUAL to to the other data
-            INCREMENT "counter"
-        ENDIF
-    ENDFOR
-
-    IF "maxCounter" is less than "counter" THEN
-        SET "maxCounter" to "counter"
-        SET "modus" to "input" data
-    ELSE IF "counter" is zero OR all data at "input" are EQUAL
-        SET "modus" to -1
-    ENDIF
-
-ENDFOR
-
-DISPLAY "modus"
-*/
 
 function cariModus(arr) {
-    var deret = 0
-    var deret2 = 0
+    var counter = 0
+    var maxCounter = 0
     var modus = 0
 
     for (var i = 0; i < arr.length; i++) {
-        deret = 0
+        counter = 0
 
         //jalankan counter setiap ada angka sama 
         for (var j = 0; j < arr.length; j++) {
             if (j !== i && arr[i] == arr[j]) {
-                deret++
+                counter++
             }
         }
 
         //cari nilai counter terbesar
-        if (deret2 < deret) {
-            deret2 = deret
+        if (maxCounter < counter) {
+            maxCounter = counter
             modus = arr[i]
         }
 
         //masukkan syarat untuk -1
-        else if (deret2 === 0 || deret2 == arr.length - 1) {
+        else if (maxCounter === 0 || maxCounter == arr.length - 1) {
             modus = - 1
         }
 

@@ -1,9 +1,8 @@
 function fpb(angka1, angka2) {
-  var fpb = 1
 
   for (var i = 1; i <= angka1; i++) {
     if (angka2 % i === 0 && angka1 % i === 0) {
-      fpb = i
+      var fpb = i
     }
   }
   return fpb
